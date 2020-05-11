@@ -10,18 +10,31 @@ export default {
       ActionTooltip,
   },
   props: {
+      /**
+       * Name to display
+       */
       name: {
         type: String,
         default: '',
       },
+      /**
+       * Id to fetch from xivapi
+       */
       id: {
         type: Number,
         default: 0,
       },
+      /**
+       * Lang to display the tooltip in
+       * @values 'en', 'de', 'fr', 'ja'
+       */
       lang: {
         type: String,
         default: 'en',
       },
+      /**
+       * Whether to embed the tooltips directly or not
+       */
       embedded: {
         type: Boolean,
         default: false,

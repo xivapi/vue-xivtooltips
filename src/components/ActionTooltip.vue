@@ -5,75 +5,131 @@ export default {
     newline2Br (value) { return value.replace(/\n\n/g, '<br />') },
   },
   props: {
+    /**
+     * The language to display the tooltip in.
+     * @default 'en'
+     * @values 'en', 'de', 'fr', 'ja'
+     */
     lang: {
       type: String,
       default: 'en',
     },
+    /**
+     * The icon of the action.
+     */
     /* eslint-disable vue/prop-name-casing */
     Icon: {
       type: String,
       default: '',
     },
+    /**
+     * The name of the action.
+     */
     Name: {
       type: String,
       default: '',
     },
+    /**
+     * The number of 100ms intervals it takes to cast
+     */
     Cast100ms: {
       type: Number,
       default: 0,
     },
+    /**
+     * The number of 100ms intervals it takes to recast the spell
+     */
     Recast100ms: {
       type: Number,
       default: 0,
     },
+    /**
+     * The name of the tooltip in English
+     */
     Name_en: {
       type: String,
       default: '',
     },
+    /**
+     * The name of the tooltip in French
+     */
     Name_fr: {
       type: String,
       default: '',
     },
+    /**
+     * The name of the tooltip in Japanese
+     */
     Name_ja: {
       type: String,
       default: '',
     },
+    /**
+     * The name of the tooltip in German
+     */
     Name_de: {
       type: String,
       default: '',
     },
+    /**
+     * The description of the tooltip (using html) in English.
+     */
     Description_en: {
       type: String,
       default: '',
     },
+    /**
+     * The description of the tooltip (using html) in French.
+     */
     Description_fr: {
       type: String,
       default: '',
     },
+    /**
+     * The description of the tooltip (using html) in Japanese.
+     */
     Description_ja: {
       type: String,
       default: '',
     },
+    /**
+     * The description of the tooltip (using html) in German.
+     */
     Description_de: {
       type: String,
       default: '',
     },
+    /**
+     * The range of the action.
+     */
     Range: {
       type: Number,
       default: 0,
     },
+    /**
+     * The level at which the Class/Job obtains the action
+     */
     ClassJobLevel: {
       type: Number,
       default: 0,
     },
+    /**
+     * The range that the action has once used
+     */
     EffectRange: {
       type: Number,
       default: 0,
     },
+    /**
+     * The MP cost of the action
+     */
     PrimaryCostValue: {
       type: Number,
       default: 0,
     },
+    /**
+     * The category the action falls under
+     */
     ActionCategory: {
       type: Object,
       default: () => ({
@@ -83,6 +139,9 @@ export default {
         Name_ja: '',
       })
     },
+    /**
+     * The name of the Class/Job that gets the ability
+     */
     ClassJobCategory: {
       type: Object,
       default: () => ({
