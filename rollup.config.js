@@ -3,12 +3,15 @@ import postcss from 'rollup-plugin-postcss'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import replace from '@rollup/plugin-replace'
+import {terser} from 'rollup-plugin-terser'
 import process from 'process'
+
+const production = process.env.NODE_ENV === 'production'
 
 export default {
     input: 'src/index.js',
     output: {
-        file: 'dist/vue-xivtooltips.js',
+        file: `dist/vue-xivtooltips${production ? '.min' : ''}.js`,
         name: 'VueXIVTooltips',
         format: 'umd',
         globals: {
@@ -25,7 +28,8 @@ export default {
         }),
         replace({
             'process.env.NODE_ENV': process.env.NODE_ENV,
-        })
+        }),
+        (production && terser())
     ],
     external: [
         'vue',
