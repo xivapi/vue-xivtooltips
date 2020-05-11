@@ -1,3 +1,13 @@
+# ActionFetch
+
+## Props
+
+| Prop name | Description                                   | Type    | Values                         | Default |
+| --------- | --------------------------------------------- | ------- | ------------------------------ | ------- |
+| name      | Name to display                               | string  | -                              | ''      |
+| id        | Id to fetch from xivapi                       | number  | -                              | 0       |
+| lang      | Lang to display the tooltip in                | string  | `'en'`, `'de'`, `'fr'`, `'ja'` | 'en'    |
+| embedded  | Whether to embed the tooltips directly or not | boolean | -                              | false   |
 # ActionTooltip
 
 ## Props
@@ -23,13 +33,3 @@
 | PrimaryCostValue | The MP cost of the action                                  | number | -                              | 0                                                                         |
 | ActionCategory   | The category the action falls under                        | object | -                              | {<br> Name_en: '',<br> Name_fr: '',<br> Name_de: '',<br> Name_ja: ''<br>} |
 | ClassJobCategory | The name of the Class/Job that gets the ability            | object | -                              | {<br> Name_en: '',<br> Name_fr: '',<br> Name_de: '',<br> Name_ja: ''<br>} |
-# ActionLink
-
-## Props
-
-| Prop name | Description                                   | Type    | Values                 | Default |
-| --------- | --------------------------------------------- | ------- | ---------------------- | ------- |
-| name      | Name to display                               | string  | -                      | ''      |
-| id        | Id to fetch from xivapi                       | number  | -                      | 0       |
-| lang      | Lang to display the tooltip in                | string  | `en`, `de`, `fr`, `ja` | 'en'    |
-| embedded  | Whether to embed the tooltips directly or not | boolean | -                      | false   |

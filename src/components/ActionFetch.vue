@@ -4,7 +4,7 @@ import 'vue-popperjs/dist/vue-popper.css';
 import ActionTooltip from './ActionTooltip.vue'
 
 export default {
-  name: 'ActionLink',
+  name: 'ActionFetch',
   components: {
       Popper,
       ActionTooltip,
