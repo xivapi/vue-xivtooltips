@@ -1,8 +1,8 @@
 import vue from 'rollup-plugin-vue'
 import postcss from 'rollup-plugin-postcss'
+import globals from 'rollup-plugin-node-globals'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
-import replace from '@rollup/plugin-replace'
 import {terser} from 'rollup-plugin-terser'
 import process from 'process'
 
@@ -26,9 +26,7 @@ export default {
         vue({
             css: false,
         }),
-        replace({
-            'process.env.NODE_ENV': process.env.NODE_ENV,
-        }),
+        globals(),
         (production && terser())
     ],
     external: [
