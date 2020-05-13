@@ -26,7 +26,7 @@
   "scripts": {
     "lint": "eslint --ext .js --ext .vue src",
     "docs": "vue-docgen -c docgen.config.js",
-    "build": "rollup -c && rollup -c --environment INCLUDE_DEPS,BUILD:production"
+    "build": "rollup -c && NODE_ENV=production rollup -c"
   },
   "dependencies": {
     "lodash-es": "^4.17.15",
