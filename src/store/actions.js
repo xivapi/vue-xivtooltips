@@ -7,6 +7,7 @@ const COLUMNS = [
     'Icon',
     'Name_en',
     'Cast100ms',
+    'Recast100ms',
     'Description_en',
     'Range',
     'ClassJobLevel',

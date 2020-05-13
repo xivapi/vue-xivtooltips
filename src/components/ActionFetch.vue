@@ -92,8 +92,7 @@ export default {
             <img
                 :class="[name ? 'xivtooltip-inline-image' : 'xivtooltip-thumbnail']"
                 :src="icon"
-            >
-            <span
+            ><span
                 v-if="name"
                 class="xivtooltip-inline-underline"
             >{{ name }}</span>
