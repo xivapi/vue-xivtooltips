@@ -193,7 +193,7 @@ export default {
                         Cast
                     </div>
                     <div class="xivtooltip-c xivtooltip-value">
-                        <span v-if="Cast100ms > 0">{{ Cast100ms / 10 }}s</span>
+                        <span v-if="Cast100ms > 0">{{ (Cast100ms / 10).toFixed(2) }}s</span>
                         <span v-else>Instant</span>
                     </div>
                 </div>
@@ -202,7 +202,7 @@ export default {
                         Recast
                     </div>
                     <div class="xivtooltip-c xivtooltip-value">
-                        {{ Recast100ms / 10 }}s
+                        {{ (Recast100ms / 10).toFixed(2) }}s
                     </div>
                 </div>
                 <div 
