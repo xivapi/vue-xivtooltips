@@ -248,6 +248,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+/* in which levi adds a comment line to test she's doing this correctly*/
 .xivtooltip-inline {
 	cursor: pointer;
 }
