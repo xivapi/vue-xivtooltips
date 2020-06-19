@@ -159,6 +159,7 @@ export default {
     actionCategory () { return this.ActionCategory ? this.ActionCategory[`Name_${this.lang}`] : '' },
     description () { return this[`Description_${this.lang}`].replace(/\n\n/g, '<br/>') },
     classJobCategory () { return this.ClassJobCategory ? this.ClassJobCategory[`Name_${this.lang}`] : '' },
+    range () { return this.Range === -1 ? 3 : this.Range },
   },
 }
 </script>
@@ -179,7 +180,7 @@ export default {
                     </div>
                     <div class="xivtooltip-area-of-effect">
                         <div class="xivtooltip-aoe xivtooltip-text">
-                            Range <span class="xivtooltip-value">{{ Range }}y</span>
+                            Range <span class="xivtooltip-value">{{ range }}y</span>
                         </div>
                         <div class="xivtooltip-aoe xivtooltip-text">
                             Radius <span class="xivtooltip-value">{{ EffectRange }}y</span>

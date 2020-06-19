@@ -46,6 +46,10 @@ export default {
             } else {
                 const reducedData = data.data.Results.reduce( (acc, value, index) => {
                     if (index > 1) {
+                        const range = value.Range
+                        if (typeof range === 'string' || range instanceof String) {
+                            value.Range = parseInt(range)
+                        }
                         acc[value.ID] = value
                         return acc
                     }
