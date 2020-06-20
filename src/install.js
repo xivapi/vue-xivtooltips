@@ -1,10 +1,6 @@
 import components from './components'
 import Store from './store'
 
-function registerComponent(Vue, key, component) {
-    Vue.component(key, component)
-}
-
 export default function install(Vue, options) {
     if(install.installed) return
 
@@ -16,7 +12,7 @@ export default function install(Vue, options) {
 
     for (const key in components) {
         const keystr = webTemplateOnly ? key.toLowerCase() : key
-        registerComponent(Vue, keystr, components[key])
+        Vue.component(keystr, components[key])
     }
 
     // add the store in as a custom name
