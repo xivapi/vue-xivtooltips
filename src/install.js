@@ -1,10 +1,11 @@
 import components from './components'
+import Store from './store'
 
 function registerComponent(Vue, key, component) {
     Vue.component(key, component)
 }
 
-export function install(Vue, options) {
+export default function install(Vue, options) {
     if(install.installed) return
 
     // Levi-specific requirement
@@ -17,4 +18,7 @@ export function install(Vue, options) {
         const keystr = webTemplateOnly ? key.toLowerCase() : key
         registerComponent(Vue, keystr, components[key])
     }
+
+    // add the store in as a custom name
+    Vue.prototype.$TTStore = Store
 }
