@@ -47,14 +47,14 @@ export default {
   },
   computed: {
     data () {
-      return this.$store.getters.getActionById(this.id)
+      return this.$TTStore.getters.getActionById(this.id)
     },
     icon () {
-      return this.$store.getters.getIconById(this.id)
+      return this.$TTStore.getters.getIconById(this.id)
     }
   },
   created () {
-    this.$store.dispatch('fetchActionId', this.id)
+    this.$TTStore.dispatch('fetchActionId', this.id)
   },
 }
 </script>
