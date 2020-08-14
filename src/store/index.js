@@ -9,6 +9,7 @@ export default new Vuex.Store({
     state: {
         actions: {},
         pendingActionIds: [],
+        defaultTimeout: 21600,
     },
     mutations,
     actions,
