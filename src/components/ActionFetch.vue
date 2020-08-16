@@ -128,10 +128,12 @@ export default {
 }
 
 .xivtooltip-inline-image {
-    width: 1.3em;
-    height: 1.3em;
-    vertical-align: bottom;
-    margin-bottom: 1px;
-    padding-right: .2em;
+  width: 1.45em;
+  height: 1.45em;
+  vertical-align: middle;
+  margin-bottom: 1.7px;
+  margin-right: .18em;
+  margin-top: -1.7px;
+  margin-left: 2px;
 }
 </style>

@@ -17,7 +17,6 @@ export const mutations = {
     },
     [ADD_PENDING_ACTION] (state, id) {
         if (! state.pendingActionIds.includes(id)) {
-            console.log(`Adding ${id} to pending lookups`)
             state.pendingActionIds.push(id)
         }
     },
