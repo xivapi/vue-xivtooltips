@@ -17,4 +17,8 @@ export default function install(Vue, options) {
 
     // add the store in as a custom name
     Vue.prototype.$TTStore = Store
+
+    // Set timeout in seconds defaults to 6 hours
+    const cacheTimeout = options.cacheTimeout || 21600
+    Vue.prototype.$TTStore.dispatch('setDefaultTimeout', cacheTimeout)
 }
