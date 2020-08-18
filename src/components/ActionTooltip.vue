@@ -268,7 +268,7 @@ export default {
 }
 
 .xivtooltip-action {
-  max-width: 370px;
+  width: 370px;
   height: auto;
   font-family: sans-serif;
   display: block;
