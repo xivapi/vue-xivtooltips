@@ -13,6 +13,7 @@ const COLUMNS = [
     'ClassJobLevel',
     'EffectRange',
     'PrimaryCostValue',
+    'PrimaryCostType',
     'ActionCategory',
     'ClassJobCategory',
     'ID',
