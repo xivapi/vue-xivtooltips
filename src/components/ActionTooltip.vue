@@ -151,6 +151,13 @@ export default {
         Name_ja: '',
       })
     },
+    /**
+     * The primary cost type; 0 for consumes mp, > 0 for something else
+     */
+    PrimaryCostType: {
+      type: Number,
+      default: 0,
+    },
     /* eslint-enable */
   },
   computed: {
@@ -208,7 +215,7 @@ export default {
                 </div>
                 <div 
                     class="xivtooltip-cooldown xivtooltip-cost" 
-                    :style="[PrimaryCostValue === 0 ? { 'visibility': 'hidden' } : {}]"
+                    :style="[(PrimaryCostValue === 0 || PrimaryCostType > 0) ? { 'visibility': 'hidden' } : {}]"
                 >
                     <div class="xivtooltip-c xivtooltip-text">
                         MP Cost
