@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Inline template test</title>
+        <link href="https://fonts.googleapis.com/css?family=Mada:400,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/bbh8fwb.css">
+        <link rel="stylesheet" href="https://use.typekit.net/xwu6uop.css">
+        <link rel="stylesheet" type="text/css" href="vue-xivtooltips.css" />
+    </head>
+    <body>
+        <div id="content">
+            <h1>ActionTooltip with manual values in html (no AJAX)</h1>
+            <ActionTooltip
+                Icon="/i/002000/002639.png"
+                Name_en="Plenary Indulgence"
+                :Cast100ms="0"
+                :Recast100ms="600"
+                :Description_en="plen_desc"
+                :Range="0"
+                :Class-Job-Level=70
+                :Effect-Range="20"
+                :Primary-Cost-Value="0"
+                :Action-Category="action_category"
+                :Class-Job-Category="class_job_category"
+            >
+            </ActionTooltip>
+            <br/>
+            <ActionTooltip
+            Icon="/i/002000/002518.png"
+            Name_en="Confetti Cannon"
+            :Cast100ms="0"
+            :Recast100ms="25"
+            :Description_en="conf_desc"
+            :Range="25"
+            :Class-Job-Level=80
+            :Effect-Range="5"
+            :Primary-Cost-Value="20"
+            :Action-Category="action_category"
+            :Class-Job-Category="conf_class_job_category"
+            >
+            </ActionTooltip>
+            <hr />
+
+            <h1>ActionFetch (with lookup)</h1>
+            <ActionFetch name="Asylum" :id="3569"></ActionFetch>
+            <ActionFetch name="Jugular Rip" :id="16156"></ActionFetch>
+            <hr />
+
+            <h1>Standalone Icon (with lookup)</h1>
+            <ActionFetch :id="16550"></ActionFetch>
+            <hr />
+
+            <h1>Embedded (with lookup)</h1>
+            <ActionFetch :id="63" embedded></ActionFetch>
+        </div>
+        <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+        <script src="https://unpkg.com/vuex@3.0.1/dist/vuex.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.js"></script>
+        <script src="vue-xivtooltips.js"></script>
+        <script>
+            Vue.use(Vuex)
+            Vue.use(VueXIVTooltips, {
+                webTemplateOnly: true,
+                cacheTimeout: 6,
+            })
+            // Vue.component('actionfetch', VueXIVTooltips.ActionFetch)
+            // Vue.component('actiontooltip', VueXIVTooltips.ActionTooltip)
+            let vm = new Vue({
+                el: '#content',
+                // store: VueXIVTooltips.Store,
+                data () {
+                    return {
+                        plen_desc: 'Grants <span style=\"color:#ffff66;\">Confession</span> to self and nearby party members.\n\nUpon receiving HP recovery via <span style=\"color:#ff7b1a;\">Medica</span>, <span style=\"color:#ff7b1a;\">Medica II</span>, <span style=\"color:#ff7b1a;\">Cure III</span>, or <span style=\"color:#ff7b1a;\">Afflatus Rapture</span> cast by self, <span style=\"color:#ffff66;\">Confession</span> triggers an additional healing effect.\n\n<span style=\"color:#00cc22;\">Cure Potency: </span>200\n\n<span style=\"color:#00cc22;\">Duration: </span>10s',
+                        action_category: {
+                            Name_en: 'Ability',
+                        },
+                        class_job_category: {
+                            Name_en: 'WHM',
+                        },
+                        conf_desc: 'Deals unaspected damage with a potency of 800 to target and all enemies nearby it using a party favor.\n\nCan only be executed while under the effect of <span style=\"color:#ffff66;\">New Years Eve</span>. Effect fades upon execution.',
+                        conf_class_job_category: {
+                            Name_en: 'PLD',
+                        },
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
