@@ -215,7 +215,7 @@ export default {
                 </div>
                 <div 
                     class="xivtooltip-cooldown xivtooltip-cost" 
-                    :style="[PrimaryCostValue === 0 || PrimaryCostType > 0 ? { 'visibility': 'hidden' } : {}]"
+                    :style="[(PrimaryCostValue === 0 || PrimaryCostType > 0) ? { 'visibility': 'hidden' } : {}]"
                 >
                     <div class="xivtooltip-c xivtooltip-text">
                         MP Cost
