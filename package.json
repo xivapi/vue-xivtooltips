@@ -10,6 +10,7 @@
     "@rollup/plugin-node-resolve": "^7.1.3",
     "@vue/compiler-sfc": "^3.0.0-beta.9",
     "axios": "^0.19.2",
+    "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^7.0.0-alpha.1",
     "postcss": "^7.0.29",
@@ -26,7 +27,8 @@
   "scripts": {
     "lint": "eslint --ext .js --ext .vue src",
     "docs": "vue-docgen -c docgen.config.js",
-    "build": "rollup -c && NODE_ENV=production rollup -c"
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "build:dev": "rollup -c "
   },
   "dependencies": {
     "lodash-es": "^4.17.15",
