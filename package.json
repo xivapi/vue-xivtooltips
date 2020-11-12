@@ -1,6 +1,6 @@
 {
   "name": "xivtooltips",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A simple library to display tooltips for Final Fantasy XIV data",
   "main": "index.js",
   "author": "Oowazu Nonowazu <oowazu.nonowazu@gmail.com>",
