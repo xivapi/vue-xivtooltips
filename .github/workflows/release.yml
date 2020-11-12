@@ -19,8 +19,8 @@ jobs:
     - run: npm install -g yarn
     - run: yarn
     - run: yarn build
-    name: upload artifacts
-    - uses: actions/upload-artifact@v2
+    - name: upload artifacts
+      uses: actions/upload-artifact@v2
       with:
         name: dist
         path: |
