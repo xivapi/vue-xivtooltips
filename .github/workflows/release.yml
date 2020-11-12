@@ -2,7 +2,7 @@ name: Release
 on:
   push:
     tags:
-      - '*'
+      - '*-release'
 
 jobs:
   release:
@@ -19,10 +19,25 @@ jobs:
     - run: npm install -g yarn
     - run: yarn
     - run: yarn build
-    - name: upload artifacts
-      uses: actions/upload-artifact@v2
+    - run: tar cvf dist.tar.gz dist/
+
+    - name: Create release
+      id: create_release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: dist
-        path: |
-          dist/*.js
-          dist/*.css
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+
+    - name: Upload release asset
+      id: upload-release-asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./dist.tar.gz
+        asset_name: dist.tar.gz
+        asset_content_type: application/gzip
