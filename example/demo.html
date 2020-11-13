@@ -60,16 +60,12 @@
         <script src="https://unpkg.com/axios/dist/axios.js"></script>
         <script src="../dist/vue-xivtooltips.js"></script>
         <script>
-            Vue.use(Vuex)
             Vue.use(VueXIVTooltips, {
-                webTemplateOnly: true,
-                cacheTimeout: 6,
+                webTemplateOnly: true, // only when using standalone
+                cacheTimeout: 900, // 15 minute cache
             })
-            // Vue.component('actionfetch', VueXIVTooltips.ActionFetch)
-            // Vue.component('actiontooltip', VueXIVTooltips.ActionTooltip)
             let vm = new Vue({
                 el: '#content',
-                // store: VueXIVTooltips.Store,
                 data () {
                     return {
                         plen_desc: 'Grants <span style=\"color:#ffff66;\">Confession</span> to self and nearby party members.\n\nUpon receiving HP recovery via <span style=\"color:#ff7b1a;\">Medica</span>, <span style=\"color:#ff7b1a;\">Medica II</span>, <span style=\"color:#ff7b1a;\">Cure III</span>, or <span style=\"color:#ff7b1a;\">Afflatus Rapture</span> cast by self, <span style=\"color:#ffff66;\">Confession</span> triggers an additional healing effect.\n\n<span style=\"color:#00cc22;\">Cure Potency: </span>200\n\n<span style=\"color:#00cc22;\">Duration: </span>10s',

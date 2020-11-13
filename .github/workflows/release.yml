@@ -1,0 +1,22 @@
+name: Release
+on:
+  push:
+    tags:
+      - '*-release'
+
+jobs:
+  release:
+    name: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup node and yarn
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14'
+    - run: npm install -g yarn
+    - run: yarn
+    - run: yarn build && yarn build:dev
+    - run: npm publish
