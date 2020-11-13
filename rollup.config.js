@@ -17,6 +17,7 @@ export default {
         globals: {
             'axios': 'axios',
             'vue': 'vue',
+            'vuex': 'Vuex',
         }
     },
     plugins: [
@@ -30,7 +31,8 @@ export default {
         (production && terser())
     ],
     external: [
-        'vue',
         'axios',
+        'vue',
+        'vuex'
     ],
 }

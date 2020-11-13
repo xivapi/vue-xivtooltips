@@ -2,7 +2,8 @@
   "name": "xivtooltips",
   "version": "0.1.3",
   "description": "A simple library to display tooltips for Final Fantasy XIV data",
-  "main": "index.js",
+  "main": "dist/vue-xivtooltips.min.js",
+  "files": ["dist"],
   "author": "Oowazu Nonowazu <oowazu.nonowazu@gmail.com>",
   "license": "MIT",
   "devDependencies": {
@@ -36,5 +37,9 @@
     "vue-popperjs": "^2.3.0",
     "vuex-persist": "^2.2.0"
   },
-  "peerDependencies": {}
+  "peerDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nonowazu/vue-xivtooltips"
+  }
 }
