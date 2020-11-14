@@ -2,7 +2,7 @@ name: Release
 on:
   push:
     tags:
-      - '*-release'
+      - 'v*-release'
 
 jobs:
   release:
@@ -12,11 +12,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Setup node and yarn
-      uses: actions/setup-node@v1
+    - uses: actions/setup-node@v1
       with:
         node-version: '14'
-    - run: npm install -g yarn
-    - run: yarn
-    - run: yarn build && yarn build:dev
-    - run: npm publish
+        registry-url: 'https://registry.npmjs.org'
+
+    - name: Build
+      run: yarn build
+
+    - name: Upload
+      run: yarn publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
