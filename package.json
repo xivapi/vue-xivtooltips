@@ -5,7 +5,7 @@
   "main": "dist/vue-xivtooltips.min.js",
   "files": ["dist"],
   "author": "Oowazu Nonowazu <oowazu.nonowazu@gmail.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-node-resolve": "^7.1.3",
