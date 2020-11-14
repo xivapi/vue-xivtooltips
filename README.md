@@ -27,7 +27,7 @@ First of all you need to include the following .css files into the head of the h
 ```html
 <link href="https://fonts.googleapis.com/css?family=Mada:400,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../dist/vue-xivtooltips.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/vue-xivtooltips/dist/vue-xivtooltips.min.js" />
 ```
 And the following scripts into the body:
 
@@ -35,7 +35,7 @@ And the following scripts into the body:
 <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
 <script src="https://unpkg.com/vuex@3.0.1/dist/vuex.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.js"></script>
-<script src="../dist/vue-xivtooltips.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-xivtooltips/dist/vue-xivtooltips.min.css"></script>
 ```
 In addition, this script is required:
 
