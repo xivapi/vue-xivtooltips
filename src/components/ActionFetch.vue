@@ -84,19 +84,19 @@ export default {
         </div>
         <!-- popper doesn't like the new vue slot syntax – https://github.com/RobinCK/vue-popper/issues/88 -->
         <!-- eslint-disable vue/no-deprecated-slot-attribute -->
-        <span 
+        <div 
             slot="reference" 
             class="xivtooltip-inline"
         >
             <!-- eslint-enable -->
-            <img
+            <span :class="[name ? 'xivtooltip-inline-image' : 'xivtooltip-thumbnail']"><img
                 :class="[name ? 'xivtooltip-inline-image' : 'xivtooltip-thumbnail']"
                 :src="icon"
-            ><span
+            ></span><span
                 v-if="name"
                 class="xivtooltip-inline-underline"
             >{{ name }}</span>
-        </span>
+        </div>
     </Popper>
 </template>
 
@@ -120,7 +120,9 @@ export default {
 }
 
 .xivtooltip-inline {
-	cursor: pointer;
+  cursor: pointer;
+  display: inline;
+  position: relative;
 }
 
 .xivtooltip-inline-underline {
@@ -136,4 +138,31 @@ export default {
   margin-top: -1.7px;
   margin-left: 2px;
 }
+
+/* TOOLTIP CAP COVER IMAGE */
+
+.xivtooltip-thumbnail::before{
+  content: '';
+  background: url('../src/assets/cover.png');
+  height: 48px;
+  width: 48px;
+  background-size: contain;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: -4px;
+  bottom: -3px;
+}
+
+.xivtooltip-inline-image::before{
+  content: '';
+  background: url('../src/assets/cover.png');
+  height: 1.7em;
+  width: 1.7em;
+  background-size: contain;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 2px;
+  top: -4px;
+}
+
 </style>

@@ -312,10 +312,24 @@ export default {
   color: #FFFFFF;
   font-family: Mada, sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: .5px;
   text-shadow: 1px 1px 1px #000;
 }
+/* TOOLTIP CAP COVER IMAGE */
+.xivtooltip-icon::before {
+  content: '';
+  background: url('../src/assets/cover.png');
+  height: 48px;
+  width: 48px;
+  background-size: contain;
+  display: block;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 9px;
+  top: 7px;
+}
+
 /* TOP */
 .xivtooltip-top {
   width: 100%;
@@ -325,9 +339,6 @@ export default {
 }
 .xivtooltip-icon {
   margin: 0px 10px 0px 0px;
-}
-.xivtooltip-icon img {
-  box-shadow: 1px 3px 2px #00000069;
 }
 .xivtooltip-actionidentity {
   width: 100%;
@@ -385,10 +396,12 @@ export default {
 }
 .xivtooltip-c.xivtooltip-value {
   text-align: right;
-  font-family: "Benton Sans Extra Compressed", benton-sans-extra-compressed, sans-serif;
-  font-weight: 500;
+  font-family: "Pathway Gothic One", sans-serif;
   font-size: 23px;
   line-height: 28px;
+  letter-spacing: 0.7px;
+  transform: scale(.82,1.1);
+  transform-origin: bottom right;
 }
 .xivtooltip-cooldown {
   position: relative;
