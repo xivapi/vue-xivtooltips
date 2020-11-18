@@ -173,6 +173,7 @@ export default {
     description () { return this[`Description_${this.lang}`].replace(/\n\n/g, '<br/>') },
     classJobCategory () { return this.ClassJobCategory ? this.ClassJobCategory[`Name_${this.lang}`] : '' },
     costType () { return resourceMapping[this.PrimaryCostType] },
+    costShouldDisplay () { return Object.keys(resourceMapping).map(Number).includes(this.PrimaryCostType) && this.PrimaryCostValue > 0 },
     range () { return this.Range === -1 ? 3 : this.Range },
   },
 }
@@ -222,7 +223,7 @@ export default {
                 </div>
                 <div 
                     class="xivtooltip-cooldown xivtooltip-cost" 
-                    :style="[(PrimaryCostValue === 0 || PrimaryCostType !== 3) ? { 'visibility': 'hidden' } : {}]"
+                    :style="[costShouldDisplay ? {} : { 'visibility': 'hidden' }]"
                 >
                     <div class="xivtooltip-c xivtooltip-text">
                         {{ costType }} Cost
