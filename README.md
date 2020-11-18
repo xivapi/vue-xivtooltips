@@ -25,8 +25,8 @@ After a successful build, you can proceed.
 First of all you need to include the following .css files into the head of the html:
 
 ```html
-<link href="https://fonts.googleapis.com/css?family=Mada:400,500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mada:wght@400;500&family=Pathway+Gothic+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/vue-xivtooltips/dist/vue-xivtooltips.min.css" />
 ```
 And the following scripts into the body:
@@ -50,6 +50,7 @@ In addition, this script is required:
     })
 </script>
 ```
+The ID `#content` can be modified to any ID or an existing ID. The ID must be on an element that wraps the area where you want the tooltips to render.
 
 The general structure of calling tooltips in html is as follows:
 ```html
