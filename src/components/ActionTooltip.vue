@@ -194,7 +194,10 @@ export default {
                     <div class="xivtooltip-classification xivtooltip-text">
                         {{ actionCategory }}
                     </div>
-                    <div class="xivtooltip-area-of-effect">
+                    <div
+                        class="xivtooltip-area-of-effect"
+                        :style="[actionNonCombatant ? { 'visibility': 'hidden' } : {}]"
+                    >
                         <div class="xivtooltip-aoe xivtooltip-text">
                             Range <span class="xivtooltip-value">{{ range }}y</span>
                         </div>
