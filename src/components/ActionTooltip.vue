@@ -1,5 +1,5 @@
 <script>
-export const resourceMapping = {
+const resourceMapping = {
   3: 'MP',
   7: 'GP',
   8: 'CP',
@@ -170,6 +170,7 @@ export default {
     name () { return this[`Name_${this.lang}`] },
     icon () { return `https://xivapi.com${this.Icon}` },
     actionCategory () { return this.ActionCategory ? this.ActionCategory[`Name_${this.lang}`] : '' },
+    actionNonCombatant () { return [6, 7].includes(this.ActionCategory.ID) },
     description () { return this[`Description_${this.lang}`].replace(/\n\n/g, '<br/>') },
     classJobCategory () { return this.ClassJobCategory ? this.ClassJobCategory[`Name_${this.lang}`] : '' },
     costType () { return resourceMapping[this.PrimaryCostType] },
@@ -204,7 +205,10 @@ export default {
                 </div>
             </div>
             <div class="xivtooltip-mid">
-                <div class="xivtooltip-cooldown">
+                <div
+                    class="xivtooltip-cooldown"
+                    :style="[actionNonCombatant ? { 'visibility': 'hidden' } : {}]"
+                >
                     <div class="xivtooltip-c xivtooltip-text">
                         Cast
                     </div>
@@ -213,7 +217,10 @@ export default {
                         <span v-else>Instant</span>
                     </div>
                 </div>
-                <div class="xivtooltip-cooldown">
+                <div
+                    class="xivtooltip-cooldown"
+                    :style="[Recast100ms === 0 ? { 'visibility': 'hidden' } : {}]"
+                >
                     <div class="xivtooltip-c xivtooltip-text">
                         Recast
                     </div>
