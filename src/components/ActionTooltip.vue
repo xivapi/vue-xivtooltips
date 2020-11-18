@@ -152,7 +152,7 @@ export default {
       })
     },
     /**
-     * The primary cost type; 0 for consumes mp, > 0 for something else
+     * The primary cost type; 0 is no cost, 2 is HP, 3 is MP, 5 is TP, 7 is GP, 8 is CP
      */
     PrimaryCostType: {
       type: Number,
@@ -215,7 +215,7 @@ export default {
                 </div>
                 <div 
                     class="xivtooltip-cooldown xivtooltip-cost" 
-                    :style="[(PrimaryCostValue === 0 || PrimaryCostType > 0) ? { 'visibility': 'hidden' } : {}]"
+                    :style="[(PrimaryCostValue === 0 || PrimaryCostType !== 3) ? { 'visibility': 'hidden' } : {}]"
                 >
                     <div class="xivtooltip-c xivtooltip-text">
                         MP Cost
