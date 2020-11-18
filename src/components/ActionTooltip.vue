@@ -139,6 +139,7 @@ export default {
     ActionCategory: {
       type: Object,
       default: () => ({
+        ID: 0,
         Name_en: '',
         Name_fr: '',
         Name_de: '',
@@ -151,6 +152,7 @@ export default {
     ClassJobCategory: {
       type: Object,
       default: () => ({
+        ID: 0,
         Name_en: '',
         Name_fr: '',
         Name_de: '',
