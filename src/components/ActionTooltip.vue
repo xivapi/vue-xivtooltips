@@ -1,4 +1,10 @@
 <script>
+export const resourceMapping = {
+  3: 'MP',
+  7: 'GP',
+  8: 'CP',
+}
+
 export default {
   name: 'ActionTooltip',
   filters: {
@@ -121,7 +127,7 @@ export default {
       default: 0,
     },
     /**
-     * The MP cost of the action
+     * The cost of the action
      */
     PrimaryCostValue: {
       type: Number,
@@ -166,6 +172,7 @@ export default {
     actionCategory () { return this.ActionCategory ? this.ActionCategory[`Name_${this.lang}`] : '' },
     description () { return this[`Description_${this.lang}`].replace(/\n\n/g, '<br/>') },
     classJobCategory () { return this.ClassJobCategory ? this.ClassJobCategory[`Name_${this.lang}`] : '' },
+    costType () { return resourceMapping[this.PrimaryCostType] },
     range () { return this.Range === -1 ? 3 : this.Range },
   },
 }
@@ -218,7 +225,7 @@ export default {
                     :style="[(PrimaryCostValue === 0 || PrimaryCostType !== 3) ? { 'visibility': 'hidden' } : {}]"
                 >
                     <div class="xivtooltip-c xivtooltip-text">
-                        MP Cost
+                        {{ costType }} Cost
                     </div>
                     <div class="xivtooltip-c xivtooltip-value">
                         {{ PrimaryCostValue * 100 }}
