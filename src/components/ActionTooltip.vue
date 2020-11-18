@@ -229,7 +229,7 @@ export default {
                         {{ costType }} Cost
                     </div>
                     <div class="xivtooltip-c xivtooltip-value">
-                        {{ PrimaryCostValue * 100 }}
+                        {{ PrimaryCostType === 3 ? PrimaryCostValue * 100 : PrimaryCostValue }}
                     </div>
                 </div>
             </div>
