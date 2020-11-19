@@ -1,3 +1,5 @@
+[![](https://data.jsdelivr.com/v1/package/npm/vue-xivtooltips/badge)](https://www.jsdelivr.com/package/npm/vue-xivtooltips) ![Test](https://github.com/nonowazu/vue-xivtooltips/workflows/Test/badge.svg)
+
 # Vue-XIVTooltips
 
 ## Introduction
