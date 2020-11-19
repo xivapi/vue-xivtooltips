@@ -1,4 +1,15 @@
 <script>
+const resourceMapping = {
+  3: 'MP',
+  7: 'GP',
+  8: 'CP',
+}
+
+/**
+ * Categories 6 and 7 are for DoL and DoH abilities respectively.
+ */
+const actionCategoryNonCombat = [ 6, 7 ]
+
 export default {
   name: 'ActionTooltip',
   filters: {
@@ -121,7 +132,7 @@ export default {
       default: 0,
     },
     /**
-     * The MP cost of the action
+     * The cost of the action
      */
     PrimaryCostValue: {
       type: Number,
@@ -133,6 +144,7 @@ export default {
     ActionCategory: {
       type: Object,
       default: () => ({
+        ID: 0,
         Name_en: '',
         Name_fr: '',
         Name_de: '',
@@ -145,6 +157,7 @@ export default {
     ClassJobCategory: {
       type: Object,
       default: () => ({
+        ID: 0,
         Name_en: '',
         Name_fr: '',
         Name_de: '',
@@ -164,8 +177,12 @@ export default {
     name () { return this[`Name_${this.lang}`] },
     icon () { return `https://xivapi.com${this.Icon}` },
     actionCategory () { return this.ActionCategory ? this.ActionCategory[`Name_${this.lang}`] : '' },
+    actionNonCombatant () { return actionCategoryNonCombat.includes(this.ActionCategory.ID) },
     description () { return this[`Description_${this.lang}`].replace(/\n\n/g, '<br/>') },
     classJobCategory () { return this.ClassJobCategory ? this.ClassJobCategory[`Name_${this.lang}`] : '' },
+    costType () { return resourceMapping[this.PrimaryCostType] },
+    costValue () { return this.PrimaryCostType === 3 ? this.PrimaryCostValue * 100 : this.PrimaryCostValue },
+    costShouldDisplay () { return Object.keys(resourceMapping).map(Number).includes(this.PrimaryCostType) && this.PrimaryCostValue > 0 },
     range () { return this.Range === -1 ? 3 : this.Range },
   },
 }
@@ -185,7 +202,10 @@ export default {
                     <div class="xivtooltip-classification xivtooltip-text">
                         {{ actionCategory }}
                     </div>
-                    <div class="xivtooltip-area-of-effect">
+                    <div
+                        class="xivtooltip-area-of-effect"
+                        :style="[actionNonCombatant ? { 'visibility': 'hidden' } : {}]"
+                    >
                         <div class="xivtooltip-aoe xivtooltip-text">
                             Range <span class="xivtooltip-value">{{ range }}y</span>
                         </div>
@@ -196,7 +216,10 @@ export default {
                 </div>
             </div>
             <div class="xivtooltip-mid">
-                <div class="xivtooltip-cooldown">
+                <div
+                    class="xivtooltip-cooldown"
+                    :style="[actionNonCombatant ? { 'visibility': 'hidden' } : {}]"
+                >
                     <div class="xivtooltip-c xivtooltip-text">
                         Cast
                     </div>
@@ -205,7 +228,10 @@ export default {
                         <span v-else>Instant</span>
                     </div>
                 </div>
-                <div class="xivtooltip-cooldown">
+                <div
+                    class="xivtooltip-cooldown"
+                    :style="[Recast100ms === 0 ? { 'visibility': 'hidden' } : {}]"
+                >
                     <div class="xivtooltip-c xivtooltip-text">
                         Recast
                     </div>
@@ -215,13 +241,13 @@ export default {
                 </div>
                 <div 
                     class="xivtooltip-cooldown xivtooltip-cost" 
-                    :style="[(PrimaryCostValue === 0 || PrimaryCostType !== 3) ? { 'visibility': 'hidden' } : {}]"
+                    :style="[costShouldDisplay ? {} : { 'visibility': 'hidden' }]"
                 >
                     <div class="xivtooltip-c xivtooltip-text">
-                        MP Cost
+                        {{ costType }} Cost
                     </div>
                     <div class="xivtooltip-c xivtooltip-value">
-                        {{ PrimaryCostValue * 100 }}
+                        {{ costValue }}
                     </div>
                 </div>
             </div>
