@@ -5,6 +5,8 @@ const resourceMapping = {
   8: 'CP',
 }
 
+const actionCategoryNonCombat = [ 6, 7 ]
+
 export default {
   name: 'ActionTooltip',
   filters: {
@@ -172,10 +174,11 @@ export default {
     name () { return this[`Name_${this.lang}`] },
     icon () { return `https://xivapi.com${this.Icon}` },
     actionCategory () { return this.ActionCategory ? this.ActionCategory[`Name_${this.lang}`] : '' },
-    actionNonCombatant () { return [6, 7].includes(this.ActionCategory.ID) },
+    actionNonCombatant () { return actionCategoryNonCombat.includes(this.ActionCategory.ID) },
     description () { return this[`Description_${this.lang}`].replace(/\n\n/g, '<br/>') },
     classJobCategory () { return this.ClassJobCategory ? this.ClassJobCategory[`Name_${this.lang}`] : '' },
     costType () { return resourceMapping[this.PrimaryCostType] },
+    costValue () { return this.PrimaryCostType === 3 ? this.PrimaryCostValue * 100 : this.PrimaryCostValue }
     costShouldDisplay () { return Object.keys(resourceMapping).map(Number).includes(this.PrimaryCostType) && this.PrimaryCostValue > 0 },
     range () { return this.Range === -1 ? 3 : this.Range },
   },
@@ -241,7 +244,7 @@ export default {
                         {{ costType }} Cost
                     </div>
                     <div class="xivtooltip-c xivtooltip-value">
-                        {{ PrimaryCostType === 3 ? PrimaryCostValue * 100 : PrimaryCostValue }}
+                        {{ costValue }}
                     </div>
                 </div>
             </div>
