@@ -178,7 +178,7 @@ export default {
     description () { return this[`Description_${this.lang}`].replace(/\n\n/g, '<br/>') },
     classJobCategory () { return this.ClassJobCategory ? this.ClassJobCategory[`Name_${this.lang}`] : '' },
     costType () { return resourceMapping[this.PrimaryCostType] },
-    costValue () { return this.PrimaryCostType === 3 ? this.PrimaryCostValue * 100 : this.PrimaryCostValue }
+    costValue () { return this.PrimaryCostType === 3 ? this.PrimaryCostValue * 100 : this.PrimaryCostValue },
     costShouldDisplay () { return Object.keys(resourceMapping).map(Number).includes(this.PrimaryCostType) && this.PrimaryCostValue > 0 },
     range () { return this.Range === -1 ? 3 : this.Range },
   },
