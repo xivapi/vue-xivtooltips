@@ -5,6 +5,9 @@ const resourceMapping = {
   8: 'CP',
 }
 
+/**
+ * Categories 6 and 7 are for DoL and DoH abilities respectively.
+ */
 const actionCategoryNonCombat = [ 6, 7 ]
 
 export default {
