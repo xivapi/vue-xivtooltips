@@ -1,3 +1,10 @@
+![Latest Version](https://img.shields.io/github/package-json/v/nonowazu/vue-xivtooltips)
+[![CDN](https://data.jsdelivr.com/v1/package/npm/vue-xivtooltips/badge?style=rounded)](https://www.jsdelivr.com/package/npm/vue-xivtooltips)
+![Test](https://img.shields.io/github/workflow/status/nonowazu/vue-xivtooltips/Test)
+[![Open Pull Requests](https://img.shields.io/github/issues-pr/nonowazu/vue-xivtooltips)](https://github.com/nonowazu/vue-xivtooltips/pulls)
+[![Open Issues](https://img.shields.io/github/issues/nonowazu/vue-xivtooltips)](https://github.com/nonowazu/vue-xivtooltips/issues)
+[![Licence](https://img.shields.io/github/license/nonowazu/vue-xivtooltips)](https://github.com/nonowazu/vue-xivtooltips/blob/master/LICENSE)
+
 # Vue-XIVTooltips
 
 ## Introduction
