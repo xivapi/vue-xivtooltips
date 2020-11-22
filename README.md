@@ -42,7 +42,7 @@ And the following scripts into the body:
 <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
 <script src="https://unpkg.com/vuex@3.0.1/dist/vuex.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue-xivtooltips/dist/vue-xivtooltips.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-xivtooltips/dist/vue-xivtooltips.umd.min.js"></script>
 ```
 In addition, this script is required:
 
