@@ -28,7 +28,7 @@
     "lint": "eslint --ext .js --ext .vue src",
     "docs": "vue-docgen -c docgen.config.js",
     "build": "vue-cli-service build --target lib --formats umd-min --name VueXIVTooltips --filename vue-xivtooltips src/index.js",
-    "build:dev": "vue-cli-service build --mode development --target lib --formats umd --name VueXIVTooltips --filename vue-xivtooltips.dev src/index.js"
+    "build:dev": "vue-cli-service build --mode development --target lib --formats umd --name VueXIVTooltips --filename vue-xivtooltips src/index.js"
   },
   "dependencies": {
     "lodash-es": "^4.17.15",
