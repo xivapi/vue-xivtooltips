@@ -132,10 +132,12 @@ export default {
   cursor: pointer;
   display: inline;
   position: relative;
+  white-space: nowrap;
 }
 
 .xivtooltip-inline-underline {
 	border-bottom: dotted #AFAFAF 2px;
+  white-space: normal;
 }
 
 /* TOOLTIP CAP COVER IMAGE */
@@ -143,7 +145,7 @@ export default {
 /*inline*/
 .xivtooltip-inline-image-wrapper {
   position: relative;
-  display: inline;
+  display: inline-block;
   padding-right: 1.85em;
   padding-top: .1em;
 }
@@ -154,8 +156,8 @@ export default {
   margin-top: .1em;
   margin-left: .4em;
   position: absolute;
-  left: -.0em;
-  top: 0.06em;
+  left: 0;
+  bottom: -.25em;
   transform: scale(1.68);
 }
 .xivtooltip-inline-image {
@@ -166,13 +168,15 @@ export default {
   margin-left: .4em;
   position: absolute;
   transform: scale(1.4);
-  top: 0;
+  bottom: -.2em;
 }
 /*icon*/
 .xivtooltip-icon-image-wrapper {
-	position: relative;
-	display: inline;
-	margin-right: 40px;
+	position: static;
+	display: inline-block;
+	margin-right: -6px;
+  width: 48px;
+  height: 48px;
 }
 .xivtooltip-icon-image {
 	width: 40px;
