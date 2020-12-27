@@ -142,34 +142,31 @@ export default {
 
 /*inline*/
 .xivtooltip-inline-image-wrapper {
-position: relative;
-	display: inline;
-	margin-right: 1.4em;
-	padding-right: 8px;
+  position: relative;
+  display: inline;
+  padding-right: 1.85em;
+  padding-top: .1em;
 }
 .xivtooltip-inline-cap {
-  width: 1.68em;
-  height: 1.68em;
+  width: 1em;
+  height: 1em;
   vertical-align: middle;
-  margin-bottom: 1.7px;
-  margin-right: .18em;
-  margin-top: -1.7px;
-  margin-left: 2px;
-  position: absolute;	
-  left: -.15em;
-  top: -.08em;
-	
+  margin-top: .1em;
+  margin-left: .4em;
+  position: absolute;
+  left: -.0em;
+  top: 0.06em;
+  transform: scale(1.68);
 }
 .xivtooltip-inline-image {
-  width: 1.4em;
-  height: 1.4em;
+  width: 1em;
+  height: 1em;
   vertical-align: middle;
-  margin-bottom: 1.7px;
-  margin-right: .18em;
-  margin-top: -1.7px;
-  margin-left: 2px;
+  margin-top: .1em;
+  margin-left: .4em;
   position: absolute;
-
+  transform: scale(1.4);
+  top: 0;
 }
 /*icon*/
 .xivtooltip-icon-image-wrapper {
