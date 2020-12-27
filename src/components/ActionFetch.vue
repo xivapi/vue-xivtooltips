@@ -170,9 +170,11 @@ export default {
 }
 /*icon*/
 .xivtooltip-icon-image-wrapper {
-	position: relative;
-	display: inline;
-	margin-right: 40px;
+	position: static;
+	display: inline-block;
+	margin-right: -6px;
+  width: 48px;
+  height: 48px;
 }
 .xivtooltip-icon-image {
 	width: 40px;
