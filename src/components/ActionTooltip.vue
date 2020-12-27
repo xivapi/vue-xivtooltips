@@ -292,10 +292,12 @@ export default {
 <style scoped>
 .xivtooltip-inline {
 	cursor: pointer;
+  white-space: nowrap;
 }
 
 .xivtooltip-inline-underline {
 	border-bottom: dotted #AFAFAF 2px;
+  white-space: normal;
 }
 
 .xivtooltip-inline-image {
