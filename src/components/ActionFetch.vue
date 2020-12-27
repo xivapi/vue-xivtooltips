@@ -154,8 +154,8 @@ export default {
   margin-top: .1em;
   margin-left: .4em;
   position: absolute;
-  left: -.0em;
-  top: 0.06em;
+  left: 0;
+  bottom: -.05em;
   transform: scale(1.68);
 }
 .xivtooltip-inline-image {
@@ -166,7 +166,7 @@ export default {
   margin-left: .4em;
   position: absolute;
   transform: scale(1.4);
-  top: 0;
+  bottom: 0;
 }
 /*icon*/
 .xivtooltip-icon-image-wrapper {

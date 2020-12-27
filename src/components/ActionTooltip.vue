@@ -356,7 +356,8 @@ export default {
 	left: -4px;
 	top: -2px;
 }
-.xivtooltip-tip-cap img {
+.xivtooltip-top img.xivtooltip-tip-cap {
+  max-width: 48px;
 	width: 48px;
 	height: 48px;
 }
