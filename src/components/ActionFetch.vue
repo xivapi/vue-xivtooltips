@@ -90,14 +90,14 @@ export default {
         >
             <!-- eslint-enable -->
             <div class="xivtooltip-inline">
-                <div class="xivtooltip-inline-image-wrapper">
+                <div :class="[name ? 'xivtooltip-inline-image-wrapper' : 'xivtooltip-icon-image-wrapper']">
                     <img 
                         :src="icon"
-                        class="xivtooltip-inline-image"
+                        :class="[name ? 'xivtooltip-inline-image' : 'xivtooltip-icon-image']"
                     >
                     <img
                         src="@/assets/cover.png"
-                        class="xivtooltip-inline-cap"
+                        :class="[name ? 'xivtooltip-inline-cap' : 'xivtooltip-icon-cap']"
                     >
                 </div>
                 <span 
