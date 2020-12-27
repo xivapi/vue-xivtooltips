@@ -193,7 +193,15 @@ export default {
         <div class="xivtooltip-container">
             <div class="xivtooltip-top">
                 <div class="xivtooltip-icon">
-                    <img :src="icon">
+                    <img
+                        :src="icon"
+                        class="tooltip-icon-img"
+                    >
+                    <img
+                        class="xivtooltip-tip-cap"
+                        src="@/assets/cover.png"
+                        alt=""
+                    >
                 </div>
                 <div class="xivtooltip-actionidentity">
                     <div class="xivtooltip-name xivtooltip-value">
@@ -342,18 +350,26 @@ export default {
   letter-spacing: .5px;
   text-shadow: 1px 1px 1px #000;
 }
-/* TOOLTIP CAP COVER IMAGE */
-.xivtooltip-icon::before {
-  content: '';
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAA7VBMVEUAAAAAAAD////////8/Pz///////8AAAD////////////////+/v7///8AAAAAAAD////y8vIAAAAAAAD9/f0AAAD9/f3+/v7+/v4AAAD///////8AAAD///8cHBwJCQlvb28AAAAAAAD////x8fH+/v6FhYULCwsFBQUjIyMMDAx2dnZhYWEXFxesrKxBQUECAgLX19cMDAz09PS6urpGRkZZWVkzMzMKCgpdXV3///8AAAAGBgZeXl4AAAAFBQX///9XV1cAAAA3Nze1tbX///+zs7OgoKAbGxs4ODgAAADz8/MICAgsLCyNjY0qfaSCAAAATHRSTlMAIwMLG0k9DC9QNUQnq5tfVTMJAx0eERYOFmZZQQfiim9hUDk1IPf18eza19DMy8rKtbGurKupopuYk5ORgnl2c2RXVkpFPTY1MjInha+GRQAAAVdJREFUSMft1tdOwzAUgOFmNRQKFDtxdtus7r333g28/+MQJWkrLnAiIXGV/8aWjj/JlyfhBSEALDYAIEzcguA8rha+sBWq4zOAt/fbWqPdfcXWbTdq20DAU7M3WclKBpMirya95skHIDeQ5UwqpIwsD3LAA2wrr6SY0FJKvsV6QCodFGb/EtKeUQ4lyQO8YzPJCDG2wweAS5rPoZlJLgCEQ5tPETJph7gBAQm0ncZl024PQJHuSWqUKCJBcCecn3sTBCSKlEa6Y+onCCkGMYhBDP4CuGiAewAxChDvoHhEWjjQ0LEYgMpaoMjwHwnrig/4zvCKKI3EplHoOuzwPlhm52kaiRQmEdHpeXbpA8kYZfv5nWV9/Jpl7fL97MiQPMCq+qxe/gypXJ/pKusBQKj6Ijd9wzbNLXSVAB6ALHFRjc07to2hXgjpvjuwEs8T2HheYgFM/EffzfVXvQZrTbEAAAAASUVORK5CYII=');
-  height: 48px;
-  width: 48px;
-  background-size: contain;
-  display: block;
-  position: absolute;
-  background-repeat: no-repeat;
-  left: 9px;
-  top: 7px;
+/* TOOLTIP CAP COVER IMAGE EMBED*/
+.xivtooltip-tip-cap {
+	position: absolute;
+	left: -4px;
+	top: -2px;
+}
+.xivtooltip-tip-cap img {
+	width: 48px;
+	height: 48px;
+}
+.tooltip-icon-img {
+	position: absolute;
+}
+.xivtooltip-icon {
+    margin: 0px 10px 0px 0px;
+    position: relative;
+    display: block;
+    width: 48px;
+    height: 40px;
+
 }
 
 /* TOP */
@@ -362,9 +378,6 @@ export default {
   display: flex;
   align-items: center;
   padding-bottom: 6px;
-}
-.xivtooltip-icon {
-  margin: 0px 10px 0px 0px;
 }
 .xivtooltip-actionidentity {
   width: 100%;
