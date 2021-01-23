@@ -15,7 +15,7 @@
   "keywords": [
     "ffxiv",
     "xivapi"
-  ]
+  ],
   "scripts": {
     "build": "vue-cli-service build --target lib --formats umd-min --name VueXIVTooltips --filename vue-xivtooltips src/index.js",
     "lint": "eslint --ext .js --ext .vue src",
