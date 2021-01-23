@@ -1,8 +1,21 @@
 {
-  "name": "vue-xivtooltips",
+  "name": "@xivapi/vue-xivtooltips",
   "version": "0.1.8",
   "description": "A simple library to display tooltips for Final Fantasy XIV data",
   "author": "Oowazu Nonowazu <oowazu.nonowazu@gmail.com>",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/xivapi/vue-xivtooltips",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xivapi/vue-xivtooltips.git"
+  },
+  "bugs": {
+    "https://github.com/xivapi/vue-xivtooltips/issues"
+  },
+  "keywords": [
+    "ffxiv",
+    "xivapi"
+  ]
   "scripts": {
     "build": "vue-cli-service build --target lib --formats umd-min --name VueXIVTooltips --filename vue-xivtooltips src/index.js",
     "lint": "eslint --ext .js --ext .vue src",
@@ -44,10 +57,5 @@
     "vue-template-compiler": "^2.6.11",
     "vuex": "^3.3.0"
   },
-  "peerDependencies": {},
-  "license": "Apache-2.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nonowazu/vue-xivtooltips"
-  }
+  "peerDependencies": {}
 }
