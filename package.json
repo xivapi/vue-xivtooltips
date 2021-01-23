@@ -10,7 +10,7 @@
     "url": "git+https://github.com/xivapi/vue-xivtooltips.git"
   },
   "bugs": {
-    "https://github.com/xivapi/vue-xivtooltips/issues"
+    "url": "https://github.com/xivapi/vue-xivtooltips/issues"
   },
   "keywords": [
     "ffxiv",
