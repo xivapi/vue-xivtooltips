@@ -1,7 +1,7 @@
 import debounce from 'lodash.debounce'
 import axios from 'axios'
 
-import {ADD_MULTIPLE_ACTIONS, ADD_PENDING_ACTION, CLEAR_PENDING_ACTIONS, ADD_ACTION, SET_TIMEOUT} from './mutation-types'
+import {ADD_ACTIONS, ADD_PENDING_ACTION, CLEAR_PENDING_ACTIONS, SET_TIMEOUT} from './mutation-types'
 
 const COLUMNS = [
     'Icon',
@@ -63,7 +63,7 @@ export default {
                 acc.cacheTime = newCacheTime
                 return {[acc.ID]: acc, [value.ID]: value}
             })
-            commit(ADD_MULTIPLE_ACTIONS, reducedData, lang)
+            commit(ADD_ACTIONS, reducedData, lang)
         })
 
         commit(CLEAR_PENDING_ACTIONS)
