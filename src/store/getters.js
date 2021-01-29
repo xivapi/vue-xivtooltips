@@ -1,9 +1,9 @@
 export default {
-    getActionById: (state) => (id) => {
-        return state.actions[id]
+    getActionById: (state) => (id, lang) => {
+        return state.actions[id][lang]
     },
-    getIconById: (state) => (id) => {
-        return state.actions[id] && state.actions[id].Icon ? `https://xivapi.com${state.actions[id].Icon}` : ''
+    getIconById: (state) => (id, lang) => {
+        return state.actions[id][lang] && state.actions[id][lang].Icon ? `https://xivapi.com${state.actions[id][lang].Icon}` : ''
     },
     getTimeout: (state) => () => state.defaultTimeout,
 }
