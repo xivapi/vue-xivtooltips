@@ -11,9 +11,9 @@ export default {
   },
   props: {
       /**
-       * Name to display
+       * Label to override Name display
        */
-      name: {
+      label: {
         type: String,
         default: '',
       },
@@ -47,14 +47,14 @@ export default {
   },
   computed: {
     data () {
-      return this.$TTStore.getters.getActionById(this.id)
+      return this.$TTStore.getters.getActionById(this.id, this.lang)
     },
     icon () {
-      return this.$TTStore.getters.getIconById(this.id)
+      return this.$TTStore.getters.getIconById(this.id, this.lang)
     }
   },
   created () {
-    this.$TTStore.dispatch('fetchActionId', this.id)
+    this.$TTStore.dispatch('fetchActionId', this.id, this.lang)
   },
 }
 </script>
@@ -90,20 +90,20 @@ export default {
         >
             <!-- eslint-enable -->
             <div class="xivtooltip-inline">
-                <div :class="[name ? 'xivtooltip-inline-image-wrapper' : 'xivtooltip-icon-image-wrapper']">
+                <div :class="[label ? 'xivtooltip-inline-image-wrapper' : 'xivtooltip-icon-image-wrapper']">
                     <img 
                         :src="icon"
-                        :class="[name ? 'xivtooltip-inline-image' : 'xivtooltip-icon-image']"
+                        :class="[label ? 'xivtooltip-inline-image' : 'xivtooltip-icon-image']"
                     >
                     <img
                         src="@/assets/cover.png"
-                        :class="[name ? 'xivtooltip-inline-cap' : 'xivtooltip-icon-cap']"
+                        :class="[label ? 'xivtooltip-inline-cap' : 'xivtooltip-icon-cap']"
                     >
                 </div>
                 <span 
-                    v-if="name"
+                    v-if="label"
                     class="xivtooltip-inline-underline"
-                >{{ name }}</span>
+                >{{ label }}</span>
             </div>
         </div>
     </Popper>

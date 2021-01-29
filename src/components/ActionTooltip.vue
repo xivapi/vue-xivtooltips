@@ -34,13 +34,6 @@ export default {
       default: '',
     },
     /**
-     * The name of the action.
-     */
-    Name: {
-      type: String,
-      default: '',
-    },
-    /**
      * The number of 100ms intervals it takes to cast
      */
     Cast100ms: {
@@ -55,58 +48,16 @@ export default {
       default: 0,
     },
     /**
-     * The name of the tooltip in English
+     * The name of the tooltip
      */
-    Name_en: {
+    Name: {
       type: String,
       default: '',
     },
     /**
-     * The name of the tooltip in French
+     * The description of the tooltip (using html).
      */
-    Name_fr: {
-      type: String,
-      default: '',
-    },
-    /**
-     * The name of the tooltip in Japanese
-     */
-    Name_ja: {
-      type: String,
-      default: '',
-    },
-    /**
-     * The name of the tooltip in German
-     */
-    Name_de: {
-      type: String,
-      default: '',
-    },
-    /**
-     * The description of the tooltip (using html) in English.
-     */
-    Description_en: {
-      type: String,
-      default: '',
-    },
-    /**
-     * The description of the tooltip (using html) in French.
-     */
-    Description_fr: {
-      type: String,
-      default: '',
-    },
-    /**
-     * The description of the tooltip (using html) in Japanese.
-     */
-    Description_ja: {
-      type: String,
-      default: '',
-    },
-    /**
-     * The description of the tooltip (using html) in German.
-     */
-    Description_de: {
+    Description: {
       type: String,
       default: '',
     },
@@ -174,11 +125,11 @@ export default {
     /* eslint-enable */
   },
   computed: {
-    name () { return this[`Name_${this.lang}`] },
+    name () { return this.Name },
     icon () { return `https://xivapi.com${this.Icon}` },
     actionCategory () { return this.ActionCategory ? this.ActionCategory[`Name_${this.lang}`] : '' },
     actionNonCombatant () { return actionCategoryNonCombat.includes(this.ActionCategory.ID) },
-    description () { return this[`Description_${this.lang}`].replace(/\n\n/g, '<br/>') },
+    description () { return this.Description.replace(/\n\n/g, '<br/>') },
     classJobCategory () { return this.ClassJobCategory ? this.ClassJobCategory[`Name_${this.lang}`] : '' },
     costType () { return resourceMapping[this.PrimaryCostType] },
     costValue () { return this.PrimaryCostType === 3 ? this.PrimaryCostValue * 100 : this.PrimaryCostValue },
