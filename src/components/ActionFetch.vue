@@ -54,7 +54,7 @@ export default {
     }
   },
   created () {
-    this.$TTStore.dispatch('fetchActionId', this.id, this.lang)
+    this.$TTStore.dispatch('fetchActionId', {id: this.id, lang: this.lang})
   },
 }
 </script>

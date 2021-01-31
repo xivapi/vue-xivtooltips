@@ -36,7 +36,7 @@ const fetchIds = debounce((ids, lang, cb) => {
 }, 20)
 
 export default {
-    fetchActionId({commit, getters, state}, id, lang) {
+    fetchActionId({commit, getters, state}, {id, lang}) {
         const action = getters.getActionById(id, lang)
         const cacheTimeoutSec = getters.getTimeout()
         if (action) {
