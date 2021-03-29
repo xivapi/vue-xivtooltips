@@ -1,15 +1,15 @@
-![Latest Version](https://img.shields.io/github/package-json/v/nonowazu/vue-xivtooltips)
-[![CDN](https://data.jsdelivr.com/v1/package/npm/vue-xivtooltips/badge?style=rounded)](https://www.jsdelivr.com/package/npm/vue-xivtooltips)
-![Test](https://img.shields.io/github/workflow/status/nonowazu/vue-xivtooltips/Test)
-[![Open Pull Requests](https://img.shields.io/github/issues-pr/nonowazu/vue-xivtooltips)](https://github.com/nonowazu/vue-xivtooltips/pulls)
-[![Open Issues](https://img.shields.io/github/issues/nonowazu/vue-xivtooltips)](https://github.com/nonowazu/vue-xivtooltips/issues)
-[![Licence](https://img.shields.io/github/license/nonowazu/vue-xivtooltips)](https://github.com/nonowazu/vue-xivtooltips/blob/master/LICENSE)
+![Latest Version](https://img.shields.io/github/package-json/v/xivapi/vue-xivtooltips)
+[![CDN](https://data.jsdelivr.com/v1/package/npm/@xivapi/vue-xivtooltips/badge?style=rounded)](https://www.jsdelivr.com/package/npm/@xivapi/vue-xivtooltips)
+![Test](https://img.shields.io/github/workflow/status/xivapi/vue-xivtooltips/Test)
+[![Open Pull Requests](https://img.shields.io/github/issues-pr/xivapi/vue-xivtooltips)](https://github.com/xivapi/vue-xivtooltips/pulls)
+[![Open Issues](https://img.shields.io/github/issues/xivapi/vue-xivtooltips)](https://github.com/xivapi/vue-xivtooltips/issues)
+[![Licence](https://img.shields.io/github/license/xivapi/vue-xivtooltips)](https://github.com/xivapi/vue-xivtooltips/blob/master/LICENSE)
 
 # Vue-XIVTooltips
 
 ## Introduction
 
-Vue-XIVTooltips is a project with the goal of providing a concise and straigthforward way of visualizing data from [XIVAPI](https://xivapi.com/) as easily readable tooltips that are modeled after the in-game tooltips of Final Fantasy XIV.
+Vue-XIVTooltips is a project with the goal of providing a concise and straightforward way of visualizing data from [XIVAPI](https://xivapi.com/) as easily readable tooltips that are modeled after the in-game tooltips of Final Fantasy XIV.
 It's built on the foundations of [Vue](https://vuejs.org/) and [Vuex](https://vuex.vuejs.org/) and can be used to provide tooltips for a website in html.
 
 ## Installation
@@ -73,7 +73,7 @@ Another example:
 ```
 would end up looking like this (mousing over Jugular Rip):
 
-![Mouseover Example Picture](https://raw.githubusercontent.com/Nonowazu/vue-xivtooltips/master/example/preview.png)
+![Mouseover Example Picture](https://raw.githubusercontent.com/xivapi/vue-xivtooltips/master/example/preview.png)
 
 To get the Standalone Icon with no text somewhat visible at the bottom of the above picture, the name is simply omitted like follows:
 ```html
@@ -94,4 +94,4 @@ An example html-script can be found under /examples/demo.html .
 
 ## Further documentation
 
-* [GitHub of Vue-XIVTooltips](https://github.com/nonowazu/vue-xivtooltips)
+* [GitHub of Vue-XIVTooltips](https://github.com/xivapi/vue-xivtooltips)
