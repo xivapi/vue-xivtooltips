@@ -34,7 +34,7 @@ First of all you need to include the following .css files into the head of the h
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mada:wght@400;500&family=Pathway+Gothic+One&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/vue-xivtooltips/dist/vue-xivtooltips.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@xivapi/vue-xivtooltips/dist/vue-xivtooltips.min.css" />
 ```
 And the following scripts into the body:
 
@@ -42,7 +42,7 @@ And the following scripts into the body:
 <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
 <script src="https://unpkg.com/vuex@3.0.1/dist/vuex.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue-xivtooltips/dist/vue-xivtooltips.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@xivapi/vue-xivtooltips/dist/vue-xivtooltips.umd.min.js"></script>
 ```
 In addition, this script is required:
 
