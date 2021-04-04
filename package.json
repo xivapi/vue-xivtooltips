@@ -1,8 +1,8 @@
 {
   "name": "@xivapi/vue-xivtooltips",
-  "version": "0.1.8",
+  "version": "0.1.10",
   "description": "A simple library to display tooltips for Final Fantasy XIV data",
-  "author": "Oowazu Nonowazu <oowazu.nonowazu@gmail.com>",
+  "author": "xivapi <code@xivapi.com>",
   "license": "Apache-2.0",
   "homepage": "https://github.com/xivapi/vue-xivtooltips",
   "repository": {
